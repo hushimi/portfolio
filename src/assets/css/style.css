@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: #C9FFC2;
+    --secondary: #0f1210;
+    --accent: #f396ff;
+}
+
+body {
+    font-family: 'Sawarabi Gothic', sans-serif;
+    background-color: var(--secondary);
+    padding: 0 10px 0 0;
+    color: var(--primary);
+}
