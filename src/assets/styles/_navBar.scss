@@ -1,0 +1,14 @@
+@import "@/assets/styles/variables.scss";
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: $secondary;
+}
+
+nav a.router-link-exact-active {
+  color: $accent;
+}
