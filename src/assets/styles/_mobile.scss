@@ -9,8 +9,9 @@
     }
   }
 
-  .landing {
-    flex-direction: column;
+  .stop-scrolling {
+    height: 100%;
+    overflow: hidden;
   }
 
   .hamburger {

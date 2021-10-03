@@ -28,6 +28,7 @@ export default defineComponent({
             const hamburger = document.querySelector('.hamburger')
             const navLinks = document.querySelector('.nav-links')
             const links = document.querySelectorAll('.nav-links li')
+            const body = document.body
             hamburger.classList.toggle('toggle')
             navLinks.classList.toggle('open')
             navLinks.classList.toggle('nav-appear')
@@ -35,6 +36,18 @@ export default defineComponent({
             links.forEach(link => {
                 link.classList.toggle('fade')
             })
+
+            // scroll禁止
+            body.classList.toggle('stop-scrolling');
+            if (body.classList.contains('stop-scrolling')) {
+                document.addEventListener('touchmove', handleTouchMove, {passive: false})
+            } else {
+                document.removeEventListener('touchmove', handleTouchMove, {passive: false})
+            }
+        }
+
+        const handleTouchMove = (event) => {
+            event.preventDefault()
         }
 
         return {toggle}
