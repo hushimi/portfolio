@@ -1,33 +1,43 @@
 <template>
     <nav>
         <div class="site-logo">
-            <a class="neontext pulsate">0xF3</a>
+            <router-link to="/" class="neontext font-bold text-xl pl-3">0xF3</router-link>
         </div>
 
-        <div class="hamburger">
+        <div class="hamburger z-40" @click="toggle">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
         <ul class="nav-links">
-            <router-link to="/">Home</router-link>
-            <router-link to="/about">About</router-link>
-            <router-link to="/practice">Practice</router-link>
+            <router-link to="/" @click="toggle">Home</router-link>
+            <router-link to="/about" @click="toggle">About</router-link>
+            <router-link to="/practice" @click="toggle">Practice</router-link>
         </ul>
     </nav>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+// ref = primitive, reactive = object
+import { defineComponent} from 'vue'
 
 export default defineComponent({
     setup() {
 
+        const toggle = () => {
+            const hamburger = document.querySelector('.hamburger')
+            const navLinks = document.querySelector('.nav-links')
+            const links = document.querySelectorAll('.nav-links li')
+            hamburger.classList.toggle('toggle')
+            navLinks.classList.toggle('open')
+            navLinks.classList.toggle('nav-appear')
+
+            links.forEach(link => {
+                link.classList.toggle('fade')
+            })
+        }
+
+        return {toggle}
     },
 })
 </script>
-
-
-<style lang="scss">
-@import '@/assets/styles/_navBar.scss';
-</style>

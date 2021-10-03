@@ -1,8 +1,6 @@
 <template>
-  <div id="nav">
-      <Navigation />
-  </div>
-  <router-view/>
+    <Navigation />
+    <router-view/>
 </template>
 
 <script>
@@ -21,10 +19,11 @@ export default defineComponent({
 
 <style lang="scss">
     #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: $primary;
     }
 </style>
