@@ -3,8 +3,8 @@
         <div class="header">
             <div class="w-11/12 h-11/12 message glass two-cols">
                 <!-- アイコンとメッセージ -->
-                <div class="h-auto text-center table">
-                    <div class="table-cell align-middle">
+                <div class="h-auto table">
+                    <div class="table-cell align-middle m-auto text-center">
                         <img src="@/assets/img/logo.png" class="m-auto">
                         <p class="break-words font-bold">
                             I am <span>A</span> self taught programmer
@@ -14,7 +14,7 @@
 
                 <!-- スキルテキストアニメーション -->
                 <div class="table">
-                    <div class="table-cell align-middle">
+                    <div class="table-cell align-middle m-auto text-center">
                         <p>Front End</p>
                         <p>Back End</p>
                         <p>App Development</p>
