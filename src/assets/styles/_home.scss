@@ -1,0 +1,26 @@
+#home {
+  .header {
+    height: 90vh;
+    background-image: url(~@/assets/img/gyaraxy.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .message {
+      width: 90%;
+      height: 80%;
+      vertical-align: middle;
+      margin: 0 auto;
+      span {
+        color: $accent;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .content {
+    height: 300px;
+  }
+}
