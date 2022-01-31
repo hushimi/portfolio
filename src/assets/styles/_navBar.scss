@@ -1,6 +1,11 @@
 nav {
   height: 10vh;
+  width: 100%;
   display: flex;
+  position: fixed;
+  background: #0f1210;
+  top: 0;
+  z-index: 1000;
   align-items: center;
 }
 

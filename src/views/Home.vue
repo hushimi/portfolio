@@ -28,6 +28,8 @@
         </div>
 
         <div class="skill-box">
+            <p>Vuejs skill</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam debitis quis omnis, ipsum error ullam, incidunt, sunt minus repellat officiis ut? Debitis expedita provident veniam omnis tenetur doloribus aut praesentium?</p>
             <vue3starRatings
                 v-model="rating"
                 :showControl="false"

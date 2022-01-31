@@ -10,9 +10,9 @@
             <div class="line3"></div>
         </div>
         <ul class="nav-links">
-            <router-link to="/" @click="toggle">Home</router-link>
-            <router-link to="/about" @click="toggle">About</router-link>
-            <router-link to="/works" @click="toggle">Works</router-link>
+            <router-link to="/" @click="removeClass">Home</router-link>
+            <router-link to="/about" @click="removeClass">About</router-link>
+            <router-link to="/works" @click="removeClass">Works</router-link>
         </ul>
     </nav>
 </template>
@@ -46,11 +46,34 @@ export default defineComponent({
 			}
 		}
 
+		const removeClass = () => {
+			const hamburger = document.querySelector('.hamburger')
+			const navLinks = document.querySelector('.nav-links')
+			const links = document.querySelectorAll('.nav-links li')
+			const body = document.body
+			hamburger.classList.remove('toggle')
+			navLinks.classList.remove('open')
+			navLinks.classList.remove('nav-appear')
+
+			links.forEach(link => {
+				link.classList.remove('fade')
+			})
+
+			// scroll禁止
+			body.classList.remove('stop-scrolling')
+			document.removeEventListener('touchmove', handleTouchMove, {passive: false})
+		}
+
 		const handleTouchMove = (event) => {
 			event.preventDefault()
 		}
 
-		return {toggle}
+		return {
+			// variable
+
+			// Function
+			toggle, removeClass
+		}
 	},
 })
 </script>
