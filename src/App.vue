@@ -8,12 +8,12 @@ import { defineComponent } from 'vue'
 import Navigation from '@/components/NavBar.vue'
 
 export default defineComponent({
-    components: {
-        Navigation
-    },
-    setup() {
+	components: {
+		Navigation
+	},
+	setup() {
 
-    },
+	},
 })
 </script>
 

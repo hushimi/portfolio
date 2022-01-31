@@ -27,18 +27,33 @@
             </div>
         </div>
 
-        <!-- <div class="content">
-            <p>My Skills</p>
-        </div> -->
+        <div class="skill-box">
+            <vue3starRatings
+                v-model="rating"
+                :showControl="false"
+                :disableClick="true"
+                :starSize="'24'"/>
+        </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import vue3starRatings from 'vue3-star-ratings'
 
 export default defineComponent({
-    setup() {
+	components: {
+		vue3starRatings
+	},
 
-    },
+	setup() {
+		const rating = ref(3)
+
+		return {
+			// value
+			rating,
+			// function
+		}
+	},
 })
 </script>

@@ -12,7 +12,7 @@
         <ul class="nav-links">
             <router-link to="/" @click="toggle">Home</router-link>
             <router-link to="/about" @click="toggle">About</router-link>
-            <router-link to="/practice" @click="toggle">Practice</router-link>
+            <router-link to="/works" @click="toggle">Works</router-link>
         </ul>
     </nav>
 </template>
@@ -22,35 +22,35 @@
 import { defineComponent} from 'vue'
 
 export default defineComponent({
-    setup() {
+	setup() {
 
-        const toggle = () => {
-            const hamburger = document.querySelector('.hamburger')
-            const navLinks = document.querySelector('.nav-links')
-            const links = document.querySelectorAll('.nav-links li')
-            const body = document.body
-            hamburger.classList.toggle('toggle')
-            navLinks.classList.toggle('open')
-            navLinks.classList.toggle('nav-appear')
+		const toggle = () => {
+			const hamburger = document.querySelector('.hamburger')
+			const navLinks = document.querySelector('.nav-links')
+			const links = document.querySelectorAll('.nav-links li')
+			const body = document.body
+			hamburger.classList.toggle('toggle')
+			navLinks.classList.toggle('open')
+			navLinks.classList.toggle('nav-appear')
 
-            links.forEach(link => {
-                link.classList.toggle('fade')
-            })
+			links.forEach(link => {
+				link.classList.toggle('fade')
+			})
 
-            // scroll禁止
-            body.classList.toggle('stop-scrolling');
-            if (body.classList.contains('stop-scrolling')) {
-                document.addEventListener('touchmove', handleTouchMove, {passive: false})
-            } else {
-                document.removeEventListener('touchmove', handleTouchMove, {passive: false})
-            }
-        }
+			// scroll禁止
+			body.classList.toggle('stop-scrolling')
+			if (body.classList.contains('stop-scrolling')) {
+				document.addEventListener('touchmove', handleTouchMove, {passive: false})
+			} else {
+				document.removeEventListener('touchmove', handleTouchMove, {passive: false})
+			}
+		}
 
-        const handleTouchMove = (event) => {
-            event.preventDefault()
-        }
+		const handleTouchMove = (event) => {
+			event.preventDefault()
+		}
 
-        return {toggle}
-    },
+		return {toggle}
+	},
 })
 </script>

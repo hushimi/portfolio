@@ -2,15 +2,17 @@
 
 # command
 
-```
 # start
-yarn serve
+
+`yarn serve`
 
 # deploy(upload to github pages)
-yarn deploy
 
+```bash
+yarn build
+yarn deploy
 ```
 
-### Customize configuration
+# Reference
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[vue3 star rating](https://www.npmjs.com/package/vue3-star-ratings)

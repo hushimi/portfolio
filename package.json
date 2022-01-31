@@ -16,7 +16,8 @@
     "core-js": "^3.6.5",
     "gh-pages": "^3.2.3",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vue3-star-ratings": "^1.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -27,8 +28,9 @@
     "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "postcss": "^7.0.38",
+    "prettier": "^2.2.1",
     "sass": "^1.42.1",
     "sass-loader": "^10",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
@@ -45,7 +47,48 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "vue/html-closing-bracket-newline": [
+        2,
+        {
+          "multiline": "never"
+        }
+      ],
+      "no-extra-parens": 1,
+      "no-multi-spaces": 2,
+      "no-multiple-empty-lines": [
+        2,
+        {
+          "max": 1
+        }
+      ],
+      "func-call-spacing": [
+        2,
+        "never"
+      ],
+      "no-unneeded-ternary": 2,
+      "semi": [
+        2,
+        "never"
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "no-var": 2,
+      "indent": [
+        "error",
+        "tab"
+      ],
+      "space-in-parens": [
+        2,
+        "never"
+      ],
+      "comma-spacing": 2,
+      "computed-property-spacing": 2,
+      "key-spacing": 2,
+      "keyword-spacing": 2
+    }
   },
   "browserslist": [
     "> 1%",
