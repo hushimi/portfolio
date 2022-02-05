@@ -5,6 +5,7 @@
 
 <script>
 import { defineComponent } from 'vue'
+import 'devicon'
 import Navigation from '@/components/NavBar.vue'
 
 export default defineComponent({
