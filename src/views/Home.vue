@@ -7,6 +7,7 @@
                 <div class="m-auto two-c-merge row-span-2 md:row-span-3">
                     <img src="@/assets/img/logo.png" class="m-auto h-full w-auto">
                 </div>
+
                 <!-- メッセージ -->
                 <div class="h-auto table m-auto two-r-merge">
                     <div class="table-cell align-middle text-left">
@@ -18,62 +19,55 @@
                         </p>
                     </div>
                 </div>
+
                 <!-- スキルテキストアニメーション -->
                 <div class="t-shift h-auto m-auto two-r-merge">
                     <p class="t-shift_title text-3xl">My Skills</p>
                     <div class="t-shift_container">
                         <ul class="t-shift_container_list m-auto">
                             <li class="t-shift_container_list_item"
-                                v-for="(skill, index) of skills" :key="index">{{ skill }}</li>
+                                v-for="(skill, index) of skillArr" :key="index">{{ skill['category'] }}</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="skill-container p-2 m-2">
-            <!-- v-for -->
-            <div class="text-left">
+        <div class="w-3/5 mx-auto mt-1 skill-header">
+            <h1>SKILL DETAIL</h1>
+        </div>
+        <div class="skill-container">
+            <!-- Category v-for -->
+            <div class="text-left mt-4 mx-auto"
+                v-for="(skillobj, catkey) of skillArr" :key="catkey">
+                <p class="skill-title w-4/5 mx-auto mt-3">{{ skillobj['category'] }}</p>
 
-                <p class="skill-title w-4/5 mx-auto mt-3">Front-end</p>
-                <div class="skill-box w-4/5 mx-auto">
+                <!-- Skill v-for -->
+                <div class="w-4/5 mx-auto mt-3 skill-box"
+                    v-for="(skill, skillkey) of skillobj['skills']" :key="skillkey">
                     <div class="title-w-icon">
                         <div class="mr-2">
-                            <i class="devicon-vuejs-plain devicon"></i>
+                            <i class="devicon" :class="getClass(catkey, skillkey)"></i>
                         </div>
-                        <p>Vuejs</p>
+                        <p>{{ skill['title'] }}</p>
                     </div>
                     <vue3starRatings
-                        v-model="rating"
+                        v-model="skill['rating']"
+                        :starColor="'#f396ff'"
                         :showControl="false"
                         :disableClick="true"
                         :starSize="'18'"/>
-                    <p>Laravelをバックエンド、Vuejsをフロントエンドとしたレスポンシブページ開発経験</p>
-                </div>
-
-                <div class="skill-box w-4/5 mx-auto mt-3">
-                    <div class="title-w-icon">
-                        <div class="mr-2">
-                            <i class="devicon-electron-original devicon"></i>
-                        </div>
-                        <p>Electron</p>
-                    </div>
-                    <vue3starRatings
-                        v-model="rating"
-                        :showControl="false"
-                        :disableClick="true"
-                        :starSize="'18'"/>
-                    <p>自分用のダッシュボードを開発。Vue3を併用</p>
+                    <p class="whitespace-pre-line text-sm">{{ skill['description'] }}</p>
                 </div>
             </div>
-
         </div>
-  </div>
+    </div>
 </template>
 
 <script>
 import { defineComponent, ref } from 'vue'
 import vue3starRatings from 'vue3-star-ratings'
+import data from '@/components/functions/data'
 
 export default defineComponent({
 	components: {
@@ -82,12 +76,17 @@ export default defineComponent({
 
 	setup() {
 		const rating = ref(4)
-		const skills = ref(['Front-end', 'Back-end', 'Mobile app', 'Server admin'])
+		const { skillArr } = data()
+
+		const getClass = (catkey, skillkey) => {
+			return skillArr.value[catkey]['skills'][skillkey]['icon']
+		}
 
 		return {
 			// value
-			rating, skills
+			rating, skillArr,
 			// function
+			getClass
 		}
 	},
 })
@@ -98,7 +97,7 @@ export default defineComponent({
     margin: 0;
     padding: 0;
 }
-::v-deep .stars {
+:deep(.stars) {
     margin: 0;
 }
 </style>

@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// ref = primitive, reactive = object
 import { defineComponent} from 'vue'
 
 export default defineComponent({
@@ -69,9 +68,6 @@ export default defineComponent({
 		}
 
 		return {
-			// variable
-
-			// Function
 			toggle, removeClass
 		}
 	},
