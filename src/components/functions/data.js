@@ -1,8 +1,9 @@
-import { readonly, ref } from 'vue'
+import { ref } from 'vue'
 export default () => {
 	const skillArr = ref([
 		{
 			'category': 'Front-end',
+			'visible': false,
 			'skills': [
 				{
 					'title': 'Vuejs',
@@ -26,6 +27,7 @@ export default () => {
 		},
 		{
 			'category': 'Back-end',
+			'visible': false,
 			'skills': [
 				{
 					'title': 'Laravel',
@@ -43,6 +45,7 @@ export default () => {
 		},
 		{
 			'category': 'Mobile app',
+			'visible': false,
 			'skills': [
 				{
 					'title': 'Flutter',
@@ -54,6 +57,7 @@ export default () => {
 		},
 		{
 			'category': 'Server admin',
+			'visible': false,
 			'skills': [
 				{
 					'title': 'Linux',
@@ -84,6 +88,6 @@ export default () => {
 	])
 
 	return {
-		skillArr: readonly(skillArr)
+		skillArr: skillArr
 	}
 }

@@ -38,9 +38,16 @@
         </div>
         <div class="skill-container">
             <!-- Category v-for -->
-            <div class="text-left mt-4 mx-auto"
-                v-for="(skillobj, catkey) of skillArr" :key="catkey">
-                <p class="skill-title w-4/5 mx-auto mt-3">{{ skillobj['category'] }}</p>
+            <div class="text-left mt-4 skill-cat"
+                v-for="(skillobj, catkey) of skillArr" :key="catkey"
+                :class="{active: skillobj['visible']}"
+                @click="toggleShow(catkey)">
+
+                <!-- category title -->
+                <div class="w-4/5 flex justify-start items-center mx-auto skill-title">
+                    <p class="w-full mt-3">{{ skillobj['category'] }}</p>
+                    <fa icon="chevron-down" class="fa-icon arrow" />
+                </div>
 
                 <!-- Skill v-for -->
                 <div class="w-4/5 mx-auto mt-3 skill-box"
@@ -82,22 +89,29 @@ export default defineComponent({
 			return skillArr.value[catkey]['skills'][skillkey]['icon']
 		}
 
+		/**
+         * アコーディオンメニュークリック
+         */
+		const toggleShow = (catkey) => {
+			skillArr.value[catkey]['visible'] = !skillArr.value[catkey]['visible']
+		}
+
 		return {
 			// value
 			rating, skillArr,
 			// function
-			getClass
+			getClass, toggleShow
 		}
 	},
 })
 </script>
 
 <style lang="scss" scoped>
-.vue3-star-ratings__wrapper {
-    margin: 0;
-    padding: 0;
-}
-:deep(.stars) {
-    margin: 0;
+:deep(.vue3-star-ratings__wrapper) {
+    padding: 0 !important;
+    margin: 0 !important;
+    .stars {
+        margin: 0;
+    }
 }
 </style>

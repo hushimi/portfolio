@@ -26,14 +26,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 footer {
   width: 100%;
-  height: 10vh;
+  height: 80px;
   margin-top: auto;
   background-color: #2f2e33;
 }
 
 .github {
-    width: 300px;
-    height: 300px;
     font-size: 2rem;
 }
 

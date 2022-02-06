@@ -137,17 +137,44 @@
 
   // You can define a value and calculate the other if you want change speed or the number of lines
 
+  // Skill Styling
   .skill-header {
     border-bottom: 2px solid $accent;
   }
 
   .skill-container {
     padding: 0.5rem 0.5rem 60px 0.5rem;
+    .skill-cat {
+      cursor: pointer;
+      .skill-title {
+        border-bottom: 2px solid #2f2e33;
+        transition: all 1.5s;
+        &:hover {
+          border-bottom: 2px solid #08f7cf;
+        }
 
-    .skill-box {
-      padding: 10px;
-      border: 1px solid $primary;
-      border-radius: 10px;
+        .arrow {
+          transform: translateX(0) rotate(0);
+          transition: transform 0.5s ease;
+        }
+      }
+
+      .skill-box {
+        padding: 10px;
+        border: 1px solid $primary;
+        border-radius: 10px;
+        display: none;
+      }
+
+      &.active {
+        .arrow {
+          transform: translateX(0) rotate(180deg);
+        }
+
+        .skill-box {
+          display: block;
+        }
+      }
     }
   }
 }
