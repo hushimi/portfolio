@@ -6,7 +6,8 @@ module.exports = {
 			},
 		}
 	},
-	publicPath: './',
+	publicPath: '/portfolio',
+	outputDir: 'docs',
 	configureWebpack: {
 		performance: {
 			hints: false,
