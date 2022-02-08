@@ -158,6 +158,7 @@
       }
 
       .skill-title {
+        width: 60%;
         border-bottom: 2px solid #2f2e33;
         transition: border-bottom 1s;
         &:hover {
@@ -166,15 +167,16 @@
 
         .arrow {
           transform: translateX(0) rotate(0);
-          transition: transform 1.5s ease;
+          transition: transform 0.3s;
         }
       }
 
       // Accordion menu
       .accordion {
+        width: 60%;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 1.5s;
+        transition: max-height 0.8s ease-out;
         .skill-box {
           padding: 10px;
           border: 1px solid $primary;

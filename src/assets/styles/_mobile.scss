@@ -1,4 +1,7 @@
 @media screen and (max-width: 700px) {
+  // ------------------------------
+  // Navigation style
+  // ------------------------------
   li {
     .fade {
       opacity: 1;
@@ -83,9 +86,17 @@
     }
   }
 
-  #practice {
-    .right {
-      display: none;
+  // ------------------------------
+  // Home
+  // ------------------------------
+  #home {
+    .skill-container {
+      .skill-title {
+        width: 80% !important;
+      }
+      .accordion {
+        width: 80% !important;
+      }
     }
   }
 }

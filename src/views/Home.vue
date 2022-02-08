@@ -4,7 +4,7 @@
             <div class="w-11/12 h-11/12 message glass two-c-six-r text-lg md:text-2xl">
                 <!-- アイコン -->
                 <div class="m-auto two-c-merge row-span-2 md:row-span-3">
-                    <img src="@/assets/img/logo.png" class="m-auto h-full w-auto">
+                    <img src="@/assets/img/logo.png" class="m-auto h-4/5 w-auto">
                 </div>
 
                 <!-- メッセージ -->
@@ -44,16 +44,16 @@
                 :class="{active: skillobj['visible']}"
                 @click="toggleShow(catkey)">
 
-                <!-- category title -->
-                <div class="w-4/5 flex justify-start items-center mx-auto skill-title">
+                <!-- skill title -->
+                <div class="flex justify-start items-center mx-auto skill-title">
                     <p class="w-full mt-3">{{ skillobj['category'] }}</p>
                     <fa icon="chevron-down" class="fa-icon arrow" />
                 </div>
 
                 <!-- Accordion Menu -->
-                <div class="accordion">
+                <div class="accordion mx-auto">
                     <!-- Skill v-for -->
-                    <div class="w-4/5 mx-auto mt-3 skill-box"
+                    <div class="mx-auto mt-3 skill-box"
                         v-for="(skill, skillkey) of skillobj['skills']" :key="skillkey">
                         <div class="title-w-icon">
                             <div class="mr-2">
