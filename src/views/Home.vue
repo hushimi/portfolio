@@ -1,7 +1,6 @@
 <template>
     <div id="home">
         <div class="header">
-
             <div class="w-11/12 h-11/12 message glass two-c-six-r text-lg md:text-2xl">
                 <!-- アイコン -->
                 <div class="m-auto two-c-merge row-span-2 md:row-span-3">
@@ -22,11 +21,13 @@
 
                 <!-- スキルテキストアニメーション -->
                 <div class="t-shift h-auto m-auto two-r-merge">
-                    <p class="t-shift_title text-3xl">My Skills</p>
+                    <p class="t-shift_title text-2xl">My Skills</p>
                     <div class="t-shift_container">
                         <ul class="t-shift_container_list m-auto">
                             <li class="t-shift_container_list_item"
-                                v-for="(skill, index) of skillArr" :key="index">{{ skill['category'] }}</li>
+                                v-for="(skill, index) of skillArr" :key="index">
+                                {{ skill['category'] }}
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -49,22 +50,25 @@
                     <fa icon="chevron-down" class="fa-icon arrow" />
                 </div>
 
-                <!-- Skill v-for -->
-                <div class="w-4/5 mx-auto mt-3 skill-box"
-                    v-for="(skill, skillkey) of skillobj['skills']" :key="skillkey">
-                    <div class="title-w-icon">
-                        <div class="mr-2">
-                            <i class="devicon" :class="getClass(catkey, skillkey)"></i>
+                <!-- Accordion Menu -->
+                <div class="accordion">
+                    <!-- Skill v-for -->
+                    <div class="w-4/5 mx-auto mt-3 skill-box"
+                        v-for="(skill, skillkey) of skillobj['skills']" :key="skillkey">
+                        <div class="title-w-icon">
+                            <div class="mr-2">
+                                <i class="devicon" :class="getClass(catkey, skillkey)"></i>
+                            </div>
+                            <p>{{ skill['title'] }}</p>
                         </div>
-                        <p>{{ skill['title'] }}</p>
+                        <vue3StarRatings
+                            v-model="skill['rating']"
+                            :starColor="'#f396ff'"
+                            :showControl="false"
+                            :disableClick="true"
+                            :starSize="'18'"/>
+                        <p class="whitespace-pre-line text-sm">{{ skill['description'] }}</p>
                     </div>
-                    <vue3starRatings
-                        v-model="skill['rating']"
-                        :starColor="'#f396ff'"
-                        :showControl="false"
-                        :disableClick="true"
-                        :starSize="'18'"/>
-                    <p class="whitespace-pre-line text-sm">{{ skill['description'] }}</p>
                 </div>
             </div>
         </div>
@@ -72,19 +76,21 @@
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import vue3starRatings from 'vue3-star-ratings'
+import { defineComponent } from 'vue'
+import vue3StarRatings from 'vue3-star-ratings'
 import data from '@/components/functions/data'
 
 export default defineComponent({
 	components: {
-		vue3starRatings
+		vue3StarRatings
 	},
 
 	setup() {
-		const rating = ref(4)
 		const { skillArr } = data()
 
+		/**
+         * devicon class追加
+         */
 		const getClass = (catkey, skillkey) => {
 			return skillArr.value[catkey]['skills'][skillkey]['icon']
 		}
@@ -98,7 +104,7 @@ export default defineComponent({
 
 		return {
 			// value
-			rating, skillArr,
+			skillArr,
 			// function
 			getClass, toggleShow
 		}

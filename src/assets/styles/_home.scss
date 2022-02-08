@@ -91,6 +91,22 @@
   }
 
   // text shift animation
+  // 6 is the number of animation.
+  // Here, there are 4 lines :
+
+  // 1 to 2
+  // 2 to 3
+  // 3 to 4
+  // 4 to 3
+  // 3 to 2
+  // 2 to 1
+
+  // 6x + 6y = 100 (100% duration)
+
+  // HERE :
+  // y = 4 -> Animation between two lines
+  // x = 12.66 -> Time spent on a line
+  // You can define a value and calculate the other if you want change speed or the number of lines
   @keyframes change {
     0%,
     12.66%,
@@ -119,24 +135,6 @@
     }
   }
 
-  // 6 is the number of animation.
-  // Here, there are 4 lines :
-
-  // 1 to 2
-  // 2 to 3
-  // 3 to 4
-  // 4 to 3
-  // 3 to 2
-  // 2 to 1
-
-  // 6x + 6y = 100 (100% duration)
-
-  // HERE :
-  // y = 4 -> Animation between two lines
-  // x = 12.66 -> Time spent on a line
-
-  // You can define a value and calculate the other if you want change speed or the number of lines
-
   // Skill Styling
   .skill-header {
     border-bottom: 2px solid $accent;
@@ -144,35 +142,43 @@
 
   .skill-container {
     padding: 0.5rem 0.5rem 60px 0.5rem;
+
     .skill-cat {
       cursor: pointer;
+      &.active {
+        .skill-title {
+          .arrow {
+            transform: translateX(0) rotate(180deg);
+          }
+        }
+
+        .accordion {
+          max-height: 1000px;
+        }
+      }
+
       .skill-title {
         border-bottom: 2px solid #2f2e33;
-        transition: all 1.5s;
+        transition: border-bottom 1s;
         &:hover {
           border-bottom: 2px solid #08f7cf;
         }
 
         .arrow {
           transform: translateX(0) rotate(0);
-          transition: transform 0.5s ease;
+          transition: transform 1.5s ease;
         }
       }
 
-      .skill-box {
-        padding: 10px;
-        border: 1px solid $primary;
-        border-radius: 10px;
-        display: none;
-      }
-
-      &.active {
-        .arrow {
-          transform: translateX(0) rotate(180deg);
-        }
-
+      // Accordion menu
+      .accordion {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1.5s;
         .skill-box {
-          display: block;
+          padding: 10px;
+          border: 1px solid $primary;
+          border-radius: 10px;
         }
       }
     }
