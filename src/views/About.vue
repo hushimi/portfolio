@@ -1,6 +1,9 @@
 <template>
   <div id="about">
-      About
+      <header class="header">
+          <img src="@/assets/img/banner.png" class="banner">
+          <h1 class="banner-title text-3xl font-bold w-full">ABOUT ME</h1>
+      </header>
   </div>
 </template>
 

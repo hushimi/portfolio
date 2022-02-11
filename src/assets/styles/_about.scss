@@ -1,3 +1,20 @@
 #about {
   margin-top: 10vh;
+  .header {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    position: relative;
+    .banner {
+      display: block;
+      margin: 0 auto;
+      opacity: 0.4;
+    }
+    .banner-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 }

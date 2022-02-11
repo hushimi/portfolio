@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="w-3/5 mx-auto mt-1 skill-header">
+        <div class="w-2/5 mx-auto mt-1 skill-header">
             <h1>SKILL DETAIL</h1>
         </div>
         <div class="skill-container">
