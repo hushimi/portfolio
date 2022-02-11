@@ -5,8 +5,9 @@
         let baseSegment = 2
         let l = window.location
         let port = l.port ? ':' + l.port : ''
+        console.log(`${l.protocol}//${l.hostname}${port}/portfolio/?p=${l.pathname.split('/').slice(1, 1 + baseSegment).join('/')}`)
         l.replace(
-            `${l.protocol}//${l.hostname}${port}/?p=${l.pathname.split('/').slice(0, 1 + baseSegment).join('/')}`
+            `${l.protocol}//${l.hostname}${port}/portfolio/?p=${l.pathname.split('/').slice(1, 1 + baseSegment).join('/')}`
         )
         // window.location.pathname = "/portfolio/";
     </script>
