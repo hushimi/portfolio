@@ -1,15 +1,15 @@
 <template>
     <div id="home">
         <div class="header">
-            <div class="w-11/12 h-11/12 message glass two-c-six-r text-lg md:text-2xl">
+            <div class="message glass two-c-six-r text-lg md:text-2xl">
                 <!-- アイコン -->
                 <div class="m-auto two-c-merge row-span-2 md:row-span-3">
-                    <img src="@/assets/img/logo.png" class="m-auto h-4/5 w-auto">
+                    <img src="@/assets/img/logo.png" class="mx-auto" style="width: auto; height: 80%;">
                 </div>
 
                 <!-- メッセージ -->
                 <div class="h-auto table m-auto two-r-merge">
-                    <div class="table-cell align-middle text-left">
+                    <div class="table-cell align-middle text-center md:text-left">
                         <p class="break-words font-bold">
                             Hi, I'm <span>Kosuke</span>
                         </p>

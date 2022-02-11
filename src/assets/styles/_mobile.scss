@@ -1,4 +1,4 @@
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
   // ------------------------------
   // Navigation style
   // ------------------------------
@@ -97,6 +97,34 @@
       .accordion {
         width: 80% !important;
       }
+    }
+  }
+
+  // ------------------------------
+  // About
+  // ------------------------------
+  #about {
+    .header {
+      width: 90%;
+    }
+  }
+}
+
+// スマホ横向きの場合
+@media (orientation: landscape) and (max-width: 767px) {
+  .nav-links {
+    clip-path: circle(100px at 90% -20%);
+    -webkit-clip-path: circle(100px at 90% -40%);
+
+    &.open {
+      clip-path: circle(1400px at 90% -40%);
+      pointer-events: all;
+    }
+  }
+
+  #home {
+    .header {
+      height: 200vh;
     }
   }
 }
