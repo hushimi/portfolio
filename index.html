@@ -10,7 +10,7 @@
                     // {p: '/foo'}に修正
                     q[param[0]] = param[1]
                 })
-
+                console.log(q)
                 if (q.p !== undefined) {
                     let urlPath = location.pathname.slice(0, -1) + (q.p || '')
                     console.log(urlPath)
