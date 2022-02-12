@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 import vue3StarRatings from 'vue3-star-ratings'
 import data from '@/components/functions/data'
 
@@ -87,6 +87,10 @@ export default defineComponent({
 
 	setup() {
 		const { skillArr } = data()
+
+		onMounted(() => {
+			window.scrollTo(0, 0)
+		})
 
 		/**
          * devicon class追加

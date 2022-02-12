@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { readonly, ref } from 'vue'
 export default () => {
 	const skillArr = ref([
 		{
@@ -87,7 +87,26 @@ export default () => {
 		}
 	])
 
+	const history = ref([
+		{
+			'year': '2009-2011',
+			'title': '陸上自衛隊少年工科学校',
+			'description': '一般高校と同程度の教育を受けつつ自衛官としての訓練や教育を受ける'
+		},
+		{
+			'year': '2011-2020',
+			'title': '陸上自衛隊仙台駐屯地\n市ヶ谷駐屯地',
+			'description': 'IP電話サーバ管理、海外訓練に関する業務を担当。\n業務を通じて「管理」から「開発」に興味を持つ。'
+		},
+		{
+			'year': '2021-',
+			'title': '宮城県仙台市のIT企業へ転職',
+			'description': 'フロントエンド・バックエンドエンジニアとして勤務中。サーバ管理、Flutterアプリ開発も担当。'
+		},
+	])
+
 	return {
-		skillArr: skillArr
+		skillArr: skillArr,
+		history: readonly(history)
 	}
 }

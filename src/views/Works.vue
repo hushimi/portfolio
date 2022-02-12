@@ -13,10 +13,13 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
 
 export default defineComponent({
 	setup() {
+		onMounted(() => {
+			window.scrollTo(0, 0)
+		})
 
 	},
 })

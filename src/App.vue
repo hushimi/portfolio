@@ -24,7 +24,7 @@ export default defineComponent({
 
 <style lang="scss">
     #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
+        font-family: "Sawarabi Gothic", sans-serif;
         min-height: 100vh;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
