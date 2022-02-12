@@ -40,7 +40,7 @@
                         {{ history['year'] }}
                     </th>
                     <td class="pl-3">
-                        <h4 class="text-lg whitespace-pre-line">
+                        <h4 class="text-sm whitespace-pre-line">
                             {{ history['title'] }}
                         </h4>
                         <p class="text-sm whitespace-pre-line">
@@ -80,7 +80,7 @@ export default defineComponent({
 			const fadeIns = document.querySelectorAll('.fade-in')
 			const options = {
 				root: null,
-				rootMargin: '0px 0px 0px 0px',
+				rootMargin: '0px 0px -35% 0px',
 				threshold: 0.0
 			}
 
@@ -97,6 +97,8 @@ export default defineComponent({
 				let target = entry.target
 				if (entry.isIntersecting && !target.classList.contains('show')) {
 					entry.target.classList.add('show')
+				} else {
+					entry.target.classList.remove('show')
 				}
 			})
 		}
